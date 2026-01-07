@@ -1,0 +1,116 @@
+@import './primitives.css';
+
+:root {
+  /* ═══════════════════════════════════════════
+     SEMANTIC TOKENS - Dark Theme (Default)
+     Use these in your components
+     ═══════════════════════════════════════════ */
+
+  /* Backgrounds */
+  --bg-primary: var(--color-neutral-50);
+  --bg-secondary: var(--color-neutral-100);
+  --bg-tertiary: var(--color-neutral-200);
+  --bg-elevated: var(--color-neutral-200);
+  --bg-inverse: var(--color-neutral-900);
+
+  /* Surfaces (cards, modals, etc.) */
+  --surface-default: var(--color-neutral-100);
+  --surface-raised: var(--color-neutral-200);
+  --surface-overlay: rgba(0, 0, 0, 0.8);
+
+  /* Text */
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-700);
+  --text-tertiary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-500);
+  --text-inverse: var(--color-neutral-50);
+  --text-on-accent: var(--color-neutral-0);
+
+  /* Brand / Accent */
+  --accent-default: var(--color-amber-500);
+  --accent-hover: var(--color-amber-400);
+  --accent-active: var(--color-amber-600);
+  --accent-subtle: rgba(245, 158, 11, 0.1);
+  --accent-muted: rgba(245, 158, 11, 0.5);
+
+  /* Borders */
+  --border-default: var(--color-neutral-300);
+  --border-subtle: var(--color-neutral-200);
+  --border-strong: var(--color-neutral-400);
+  --border-accent: var(--color-amber-500);
+  --border-focus: var(--color-amber-500);
+
+  /* Status Colors */
+  --status-success: var(--color-green-500);
+  --status-success-subtle: rgba(16, 185, 129, 0.1);
+  --status-success-text: #6ee7b7;
+  --status-error: var(--color-red-500);
+  --status-error-subtle: rgba(239, 68, 68, 0.1);
+
+  /* Interactive States */
+  --interactive-hover: rgba(255, 255, 255, 0.05);
+  --interactive-active: rgba(255, 255, 255, 0.1);
+  --interactive-disabled: var(--color-neutral-400);
+
+  /* Focus Ring */
+  --focus-ring: 0 0 0 3px rgba(245, 158, 11, 0.3);
+
+  /* Brand Glow */
+  --glow-accent: 0 0 60px rgba(245, 158, 11, 0.2);
+
+  /* Typography Semantic */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', Consolas, monospace;
+
+  /* Transitions */
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-normal: var(--duration-normal) var(--ease-out);
+  --transition-slow: var(--duration-slow) var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ═══════════════════════════════════════════ */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: var(--color-neutral-1000);
+    --bg-secondary: var(--color-neutral-800);
+    --bg-tertiary: var(--color-neutral-700);
+    --bg-elevated: var(--color-neutral-1000);
+    --bg-inverse: var(--color-neutral-100);
+
+    --surface-default: var(--color-neutral-1000);
+    --surface-raised: var(--color-neutral-900);
+
+    --text-primary: var(--color-neutral-100);
+    --text-secondary: var(--color-neutral-400);
+    --text-tertiary: var(--color-neutral-500);
+    --text-muted: var(--color-neutral-600);
+    --text-inverse: var(--color-neutral-900);
+
+    --accent-default: var(--color-amber-600);
+    --accent-hover: var(--color-amber-500);
+    --accent-active: var(--color-amber-700);
+
+    --border-default: var(--color-neutral-800);
+    --border-subtle: var(--color-neutral-900);
+    --border-strong: var(--color-neutral-700);
+
+    --interactive-hover: rgba(0, 0, 0, 0.05);
+    --interactive-active: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Manual theme class overrides */
+[data-theme="dark"] {
+  --bg-primary: var(--color-neutral-50);
+  --bg-secondary: var(--color-neutral-100);
+  --text-primary: var(--color-neutral-900);
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--color-neutral-1000);
+  --bg-secondary: var(--color-neutral-800);
+  --text-primary: var(--color-neutral-100);
+}

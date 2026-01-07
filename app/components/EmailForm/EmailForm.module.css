@@ -1,0 +1,119 @@
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.8s var(--ease-out) forwards;
+  animation-delay: 300ms;
+  opacity: 0;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 var(--input-padding-x);
+  padding-right: 140px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-default);
+  border-radius: var(--input-radius);
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  transition: all var(--transition-normal);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-default);
+  box-shadow: var(--focus-ring);
+}
+
+.submitButton {
+  position: absolute;
+  right: 6px;
+  padding: var(--space-2) var(--space-6);
+  background: linear-gradient(135deg, var(--accent-default) 0%, var(--color-amber-600) 100%);
+  color: var(--text-on-accent);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--button-radius);
+  transition: all var(--transition-normal);
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent-default) 100%);
+  box-shadow: var(--glow-accent);
+  transform: translateY(-1px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.disclaimer {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Success state */
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-8);
+  background: var(--status-success-subtle);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-xl);
+  animation: scaleIn 0.3s var(--ease-out) forwards;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 50%;
+  color: var(--status-success);
+}
+
+.successTitle {
+  color: var(--status-success-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.successText {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .input {
+    padding-right: var(--space-6);
+    height: 3rem;
+  }
+  
+  .submitButton {
+    position: static;
+    width: 100%;
+    margin-top: var(--space-3);
+    padding: var(--space-3) var(--space-6);
+  }
+  
+  .inputWrapper {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,36 @@
+@import './semantic.css';
+
+:root {
+  /* ═══════════════════════════════════════════
+     COMPONENT TOKENS
+     For consistent component styling
+     ═══════════════════════════════════════════ */
+
+  /* Button */
+  --button-height-sm: 2rem;
+  --button-height-md: 2.5rem;
+  --button-height-lg: 3rem;
+  --button-padding-x: var(--space-6);
+  --button-radius: var(--radius-full);
+  --button-font-weight: var(--font-weight-semibold);
+
+  /* Input */
+  --input-height: 3.25rem;
+  --input-padding-x: var(--space-6);
+  --input-radius: var(--radius-full);
+  --input-border: var(--border-default);
+  --input-bg: var(--bg-secondary);
+  --input-focus-border: var(--border-accent);
+
+  /* Card */
+  --card-padding: var(--space-6);
+  --card-radius: var(--radius-xl);
+  --card-bg: var(--surface-default);
+  --card-border: var(--border-subtle);
+
+  /* Badge */
+  --badge-padding-x: var(--space-4);
+  --badge-padding-y: var(--space-2);
+  --badge-radius: var(--radius-full);
+  --badge-font-size: var(--font-size-sm);
+}
