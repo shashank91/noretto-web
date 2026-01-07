@@ -41,6 +41,7 @@
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1;
 }
 
 .orb {
@@ -80,13 +81,7 @@
 }
 
 .gridOverlay {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: 
-    linear-gradient(#fff 1px, transparent 1px),
-    linear-gradient(90deg, #fff 1px, transparent 1px);
-  background-size: 60px 60px;
+  /* Styles applied via inline in page.tsx for better control */
 }
 
 /* ═══════════════════════════════════════════

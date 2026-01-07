@@ -67,6 +67,16 @@
   --transition-fast: var(--duration-fast) var(--ease-out);
   --transition-normal: var(--duration-normal) var(--ease-out);
   --transition-slow: var(--duration-slow) var(--ease-out);
+
+  /* Grid overlay */
+  --grid-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Dark mode grid */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grid-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
 /* ═══════════════════════════════════════════
