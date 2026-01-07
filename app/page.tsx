@@ -9,17 +9,7 @@ export default function Home() {
         <div className={`${styles.orb} ${styles.orbTopLeft}`} />
         <div className={`${styles.orb} ${styles.orbBottomRight}`} />
         <div className={`${styles.orb} ${styles.orbCenter}`} />
-        <div 
-          className={styles.gridOverlay} 
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage: 'linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-            zIndex: 1,
-            pointerEvents: 'none'
-          }}
-        />
+        <div className={styles.gridOverlay} />
       </div>
 
       {/* Main content */}
