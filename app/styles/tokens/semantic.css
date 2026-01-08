@@ -68,48 +68,8 @@
   --transition-normal: var(--duration-normal) var(--ease-out);
   --transition-slow: var(--duration-slow) var(--ease-out);
 
-  /* Grid overlay */
-  --grid-color: rgba(0, 0, 0, 0.02);
-}
-
-/* Dark mode grid */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --grid-color: rgba(255, 255, 255, 0.05);
-  }
-}
-
-/* ═══════════════════════════════════════════
-   LIGHT THEME OVERRIDES
-   ═══════════════════════════════════════════ */
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-primary: var(--color-neutral-1000);
-    --bg-secondary: var(--color-neutral-800);
-    --bg-tertiary: var(--color-neutral-700);
-    --bg-elevated: var(--color-neutral-1000);
-    --bg-inverse: var(--color-neutral-100);
-
-    --surface-default: var(--color-neutral-1000);
-    --surface-raised: var(--color-neutral-900);
-
-    --text-primary: var(--color-neutral-100);
-    --text-secondary: var(--color-neutral-400);
-    --text-tertiary: var(--color-neutral-500);
-    --text-muted: var(--color-neutral-600);
-    --text-inverse: var(--color-neutral-900);
-
-    --accent-default: var(--color-amber-600);
-    --accent-hover: var(--color-amber-500);
-    --accent-active: var(--color-amber-700);
-
-    --border-default: var(--color-neutral-800);
-    --border-subtle: var(--color-neutral-900);
-    --border-strong: var(--color-neutral-700);
-
-    --interactive-hover: rgba(0, 0, 0, 0.05);
-    --interactive-active: rgba(0, 0, 0, 0.1);
-  }
+  /* Grid overlay - always use light lines for dark background */
+  --grid-color: rgba(255, 255, 255, 0.03);
 }
 
 /* Manual theme class overrides */

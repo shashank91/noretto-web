@@ -101,6 +101,151 @@
   }
 }
 
+/* Spark animations - travel along grid lines with intersection flashes */
+@keyframes sparkMoveRight {
+  0% { left: 50%; opacity: 0; }
+  2% { opacity: 1; }
+  15% { opacity: 0.6; }
+  16% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  17% { opacity: 0.6; }
+  32% { opacity: 0.6; }
+  33% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  34% { opacity: 0.6; }
+  49% { opacity: 0.6; }
+  50% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  51% { opacity: 0.6; }
+  66% { opacity: 0.6; }
+  67% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  68% { opacity: 0.6; }
+  83% { opacity: 0.6; }
+  84% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  85% { opacity: 0.4; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes sparkMoveLeft {
+  0% { right: 50%; opacity: 0; }
+  2% { opacity: 1; }
+  15% { opacity: 0.6; }
+  16% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  17% { opacity: 0.6; }
+  32% { opacity: 0.6; }
+  33% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  34% { opacity: 0.6; }
+  49% { opacity: 0.6; }
+  50% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  51% { opacity: 0.6; }
+  66% { opacity: 0.6; }
+  67% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  68% { opacity: 0.6; }
+  83% { opacity: 0.6; }
+  84% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  85% { opacity: 0.4; }
+  100% { right: 100%; opacity: 0; }
+}
+
+@keyframes sparkMoveDown {
+  0% { top: 52%; opacity: 0; }
+  2% { opacity: 1; }
+  15% { opacity: 0.6; }
+  16% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  17% { opacity: 0.6; }
+  32% { opacity: 0.6; }
+  33% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  34% { opacity: 0.6; }
+  49% { opacity: 0.6; }
+  50% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  51% { opacity: 0.6; }
+  66% { opacity: 0.6; }
+  67% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  68% { opacity: 0.6; }
+  83% { opacity: 0.6; }
+  84% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  85% { opacity: 0.4; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes sparkMoveUp {
+  0% { bottom: 48%; opacity: 0; }
+  2% { opacity: 1; }
+  15% { opacity: 0.6; }
+  16% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  17% { opacity: 0.6; }
+  32% { opacity: 0.6; }
+  33% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  34% { opacity: 0.6; }
+  49% { opacity: 0.6; }
+  50% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  51% { opacity: 0.6; }
+  66% { opacity: 0.6; }
+  67% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  68% { opacity: 0.6; }
+  83% { opacity: 0.6; }
+  84% { opacity: 1; filter: brightness(3) drop-shadow(0 0 8px white); }
+  85% { opacity: 0.4; }
+  100% { bottom: 100%; opacity: 0; }
+}
+
+/* Base spark style */
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, white 0%, rgba(200, 220, 255, 0.8) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: brightness(2) drop-shadow(0 0 4px white) drop-shadow(0 0 8px rgba(200, 220, 255, 0.8));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkRight {
+  top: 52%;
+  transform: translateY(-50%);
+  animation: sparkMoveRight 3s linear infinite;
+}
+
+.sparkRight2 {
+  top: 52%;
+  transform: translateY(-50%);
+  animation: sparkMoveRight 3s linear infinite 1.5s;
+}
+
+.sparkLeft {
+  top: 52%;
+  transform: translateY(-50%);
+  animation: sparkMoveLeft 3s linear infinite 0.5s;
+}
+
+.sparkLeft2 {
+  top: 52%;
+  transform: translateY(-50%);
+  animation: sparkMoveLeft 3s linear infinite 2s;
+}
+
+.sparkDown {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sparkMoveDown 3s linear infinite 0.75s;
+}
+
+.sparkDown2 {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sparkMoveDown 3s linear infinite 2.25s;
+}
+
+.sparkUp {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sparkMoveUp 3s linear infinite 1s;
+}
+
+.sparkUp2 {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sparkMoveUp 3s linear infinite 2.5s;
+}
+
 /* ═══════════════════════════════════════════
    MAIN CONTENT
    ═══════════════════════════════════════════ */

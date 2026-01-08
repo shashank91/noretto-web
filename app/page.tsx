@@ -10,6 +10,16 @@ export default function Home() {
         <div className={`${styles.orb} ${styles.orbBottomRight}`} />
         <div className={`${styles.orb} ${styles.orbCenter}`} />
         <div className={styles.gridOverlay} />
+        
+        {/* Sparks traveling along grid lines */}
+        <div className={`${styles.spark} ${styles.sparkRight}`} />
+        <div className={`${styles.spark} ${styles.sparkRight2}`} />
+        <div className={`${styles.spark} ${styles.sparkLeft}`} />
+        <div className={`${styles.spark} ${styles.sparkLeft2}`} />
+        <div className={`${styles.spark} ${styles.sparkDown}`} />
+        <div className={`${styles.spark} ${styles.sparkDown2}`} />
+        <div className={`${styles.spark} ${styles.sparkUp}`} />
+        <div className={`${styles.spark} ${styles.sparkUp2}`} />
       </div>
 
       {/* Main content */}
