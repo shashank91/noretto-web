@@ -1,0 +1,207 @@
+/* Spark animations - travel along grid lines with intersection flashes */
+/* Using scale transform for flashes instead of expensive drop-shadows */
+@keyframes sparkMoveRight {
+  0% { left: 50%; opacity: 0; transform: translateY(-50%) scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  16% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  32% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  33% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  49% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  50% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  66% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  67% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  83% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  84% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  85% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+  100% { left: 100%; opacity: 0; transform: translateY(-50%) scale(1); }
+}
+
+@keyframes sparkMoveLeft {
+  0% { right: 50%; opacity: 0; transform: translateY(-50%) scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  16% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  32% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  33% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  49% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  50% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  66% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  67% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  83% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+  84% { opacity: 1; transform: translateY(-50%) scale(1.5); filter: brightness(1.5); }
+  85% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+  100% { right: 100%; opacity: 0; transform: translateY(-50%) scale(1); }
+}
+
+@keyframes sparkMoveDown {
+  0% { top: 52%; opacity: 0; transform: translateX(-50%) scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  16% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  32% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  33% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  49% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  66% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  67% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  83% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  84% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  85% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { top: 100%; opacity: 0; transform: translateX(-50%) scale(1); }
+}
+
+@keyframes sparkMoveUp {
+  0% { bottom: 48%; opacity: 0; transform: translateX(-50%) scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  16% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  32% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  33% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  49% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  66% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  67% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  83% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  84% { opacity: 1; transform: translateX(-50%) scale(1.5); filter: brightness(1.5); }
+  85% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  100% { bottom: 100%; opacity: 0; transform: translateX(-50%) scale(1); }
+}
+
+/* Diagonal spark animations */
+@keyframes sparkMoveDiagBR {
+  0% { top: 52%; left: 50%; opacity: 0; transform: scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: scale(1); }
+  16% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: scale(1); }
+  32% { opacity: 0.7; transform: scale(1); }
+  33% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: scale(1); }
+  49% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: scale(1); }
+  66% { opacity: 0.7; transform: scale(1); }
+  67% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.5; transform: scale(1); }
+  100% { top: 100%; left: 100%; opacity: 0; transform: scale(1); }
+}
+
+@keyframes sparkMoveDiagBL {
+  0% { top: 52%; right: 50%; opacity: 0; transform: scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: scale(1); }
+  16% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: scale(1); }
+  32% { opacity: 0.7; transform: scale(1); }
+  33% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: scale(1); }
+  49% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: scale(1); }
+  66% { opacity: 0.7; transform: scale(1); }
+  67% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.5; transform: scale(1); }
+  100% { top: 100%; right: 100%; opacity: 0; transform: scale(1); }
+}
+
+@keyframes sparkMoveDiagTR {
+  0% { bottom: 48%; left: 50%; opacity: 0; transform: scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: scale(1); }
+  16% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: scale(1); }
+  32% { opacity: 0.7; transform: scale(1); }
+  33% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: scale(1); }
+  49% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: scale(1); }
+  66% { opacity: 0.7; transform: scale(1); }
+  67% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.5; transform: scale(1); }
+  100% { bottom: 100%; left: 100%; opacity: 0; transform: scale(1); }
+}
+
+@keyframes sparkMoveDiagTL {
+  0% { bottom: 48%; right: 50%; opacity: 0; transform: scale(1); }
+  2% { opacity: 1; }
+  15% { opacity: 0.7; transform: scale(1); }
+  16% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  17% { opacity: 0.7; transform: scale(1); }
+  32% { opacity: 0.7; transform: scale(1); }
+  33% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  34% { opacity: 0.7; transform: scale(1); }
+  49% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  51% { opacity: 0.7; transform: scale(1); }
+  66% { opacity: 0.7; transform: scale(1); }
+  67% { opacity: 1; transform: scale(1.5); filter: brightness(1.5); }
+  68% { opacity: 0.5; transform: scale(1); }
+  100% { bottom: 100%; right: 100%; opacity: 0; transform: scale(1); }
+}
+
+/* Base spark style - using SVG for performance */
+.spark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: url('/spark.svg') center/contain no-repeat;
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform, opacity;
+}
+
+/* Cardinal direction sparks */
+.sparkRight {
+  top: 52%;
+  animation: sparkMoveRight 3s linear infinite;
+}
+
+.sparkLeft {
+  top: 52%;
+  animation: sparkMoveLeft 3s linear infinite;
+}
+
+.sparkDown {
+  left: 50%;
+  animation: sparkMoveDown 3s linear infinite;
+}
+
+.sparkUp {
+  left: 50%;
+  animation: sparkMoveUp 3s linear infinite;
+}
+
+/* Diagonal sparks */
+.sparkDiagBR {
+  animation: sparkMoveDiagBR 3.5s linear infinite;
+}
+
+.sparkDiagBL {
+  animation: sparkMoveDiagBL 3.5s linear infinite;
+}
+
+.sparkDiagTR {
+  animation: sparkMoveDiagTR 3.5s linear infinite;
+}
+
+.sparkDiagTL {
+  animation: sparkMoveDiagTL 3.5s linear infinite;
+}
