@@ -18,11 +18,11 @@
   --surface-raised: var(--color-neutral-200);
   --surface-overlay: rgba(0, 0, 0, 0.8);
 
-  /* Text */
-  --text-primary: var(--color-neutral-900);
-  --text-secondary: var(--color-neutral-700);
-  --text-tertiary: var(--color-neutral-600);
-  --text-muted: var(--color-neutral-500);
+  /* Text - brightened for better readability */
+  --text-primary: var(--color-neutral-1000);
+  --text-secondary: var(--color-neutral-800);
+  --text-tertiary: var(--color-neutral-700);
+  --text-muted: var(--color-neutral-600);
   --text-inverse: var(--color-neutral-50);
   --text-on-accent: var(--color-neutral-0);
 

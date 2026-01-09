@@ -1,0 +1,25 @@
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: var(--space-4) var(--space-8);
+  background: rgba(12, 12, 12, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-normal), background var(--transition-normal);
+}
+
+.header.scrolled {
+  border-bottom-color: var(--border-subtle);
+  background: rgba(12, 12, 12, 0.95);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
