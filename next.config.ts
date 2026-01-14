@@ -21,6 +21,33 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Performance: Enable compression
+  compress: true,
+  // Caching headers for static assets
+  async headers() {
+    return [
+      {
+        // Static assets (fonts, images in public folder)
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|ico|woff|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Next.js static chunks (JS/CSS) - immutable because they have hash in filename
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

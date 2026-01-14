@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
-
 /* ═══════════════════════════════════════════
    TYPOGRAPHY STYLES
+   Font loaded via next/font in layout.tsx
    ═══════════════════════════════════════════ */
 
 h1, h2, h3, h4, h5, h6 {

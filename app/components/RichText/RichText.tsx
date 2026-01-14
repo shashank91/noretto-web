@@ -124,6 +124,8 @@ function RenderNode({ node }: { node: LexicalNode }): React.ReactNode {
               width={media.sizes?.medium?.width || media.width || 800}
               height={media.sizes?.medium?.height || media.height || 600}
               className={styles.image}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 720px"
             />
           </figure>
         );
@@ -143,6 +145,8 @@ function RenderNode({ node }: { node: LexicalNode }): React.ReactNode {
               width={media.sizes?.large?.width || media.sizes?.medium?.width || media.width || 800}
               height={media.sizes?.large?.height || media.sizes?.medium?.height || media.height || 600}
               className={styles.image}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 720px"
             />
           </figure>
         );

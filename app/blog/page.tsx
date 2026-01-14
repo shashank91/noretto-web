@@ -70,7 +70,7 @@ export default async function BlogPage() {
 
         {posts.length > 0 && (
           <div className={styles.grid}>
-            {posts.map((post) => {
+            {posts.map((post, index) => {
               const heroUrl = post.heroImage?.sizes?.medium?.url || post.heroImage?.url;
               const excerpt = extractExcerpt(post.content);
               const date = new Date(post.publishedAt).toLocaleDateString('en-US', {
@@ -78,6 +78,8 @@ export default async function BlogPage() {
                 month: 'long',
                 day: 'numeric',
               });
+              // First 3 images load eagerly (above fold), rest lazy load
+              const isAboveFold = index < 3;
 
               return (
                 <Link 
@@ -91,8 +93,10 @@ export default async function BlogPage() {
                         src={getMediaUrl(heroUrl)}
                         alt={post.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                         className={styles.image}
+                        priority={isAboveFold}
+                        loading={isAboveFold ? 'eager' : 'lazy'}
                       />
                     </div>
                   )}

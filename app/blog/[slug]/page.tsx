@@ -119,6 +119,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 alt={post.title}
                 fill
                 priority
+                fetchPriority="high"
                 sizes="100vw"
                 className={styles.heroImage}
               />
