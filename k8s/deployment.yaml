@@ -20,6 +20,14 @@ spec:
           image: shashank1248/noretto-web:latest
           ports:
             - containerPort: 3000
+          env:
+            - name: NEXT_PUBLIC_PAYLOAD_URL
+              value: "http://46.62.135.233:30081"
+            - name: REVALIDATION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: noretto-web-secrets
+                  key: revalidation-secret
           resources:
             requests:
               memory: "128Mi"

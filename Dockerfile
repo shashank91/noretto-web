@@ -9,6 +9,10 @@ RUN npm ci --only=production
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# NEXT_PUBLIC_ vars must be set at build time
+ARG NEXT_PUBLIC_PAYLOAD_URL=http://localhost:3001
+ENV NEXT_PUBLIC_PAYLOAD_URL=$NEXT_PUBLIC_PAYLOAD_URL
+
 COPY package.json package-lock.json ./
 RUN npm ci
 

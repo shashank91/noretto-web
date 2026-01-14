@@ -40,7 +40,7 @@ function RenderNode({ node }: { node: LexicalNode }): React.ReactNode {
       );
 
     case 'heading':
-      const HeadingTag = (node.tag || 'h2') as keyof JSX.IntrinsicElements;
+      const HeadingTag = (node.tag || 'h2') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
       return (
         <HeadingTag>
           {node.children?.map((child, i) => (

@@ -13,41 +13,59 @@ interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Use dynamic rendering - pages are generated on-demand, not at build time
+// This prevents build failures when Payload is not accessible
+export const dynamic = 'force-dynamic';
+
 export async function generateStaticParams() {
-  const slugs = await getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await getAllPostSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch (error) {
+    // Return empty array if Payload is not accessible during build
+    // Pages will be generated on-demand (SSR)
+    console.warn('Could not fetch post slugs during build:', error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  try {
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
 
-  if (!post) {
+    if (!post) {
+      return {
+        title: 'Post Not Found | noretto',
+      };
+    }
+
+    const description = post.meta?.description || extractExcerpt(post.content);
+    const ogImage = post.meta?.image?.sizes?.og?.url || post.heroImage?.sizes?.og?.url;
+
     return {
-      title: 'Post Not Found | noretto',
+      title: `${post.meta?.title || post.title} | noretto`,
+      description,
+      openGraph: {
+        title: post.meta?.title || post.title,
+        description,
+        type: 'article',
+        publishedTime: post.publishedAt,
+        images: ogImage ? [{ url: getMediaUrl(ogImage) }] : undefined,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.meta?.title || post.title,
+        description,
+        images: ogImage ? [getMediaUrl(ogImage)] : undefined,
+      },
+    };
+  } catch (error) {
+    console.warn('Could not generate metadata:', error);
+    return {
+      title: 'Blog | noretto',
     };
   }
-
-  const description = post.meta?.description || extractExcerpt(post.content);
-  const ogImage = post.meta?.image?.sizes?.og?.url || post.heroImage?.sizes?.og?.url;
-
-  return {
-    title: `${post.meta?.title || post.title} | noretto`,
-    description,
-    openGraph: {
-      title: post.meta?.title || post.title,
-      description,
-      type: 'article',
-      publishedTime: post.publishedAt,
-      images: ogImage ? [{ url: getMediaUrl(ogImage) }] : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.meta?.title || post.title,
-      description,
-      images: ogImage ? [getMediaUrl(ogImage)] : undefined,
-    },
-  };
 }
 
 export default async function PostPage({ params }: PostPageProps) {

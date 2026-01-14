@@ -5,6 +5,9 @@ import { getPosts, getMediaUrl, extractExcerpt } from '@/lib/payload';
 import { PayloadPost } from '@/lib/types';
 import styles from './blog.module.css';
 
+// Use dynamic rendering to prevent build failures when Payload is not accessible
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Blog | noretto',
   description: 'Insights, updates, and stories from the noretto team.',

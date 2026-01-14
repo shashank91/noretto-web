@@ -3,8 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    // Disable optimization in dev (localhost resolves to private IP which Next.js blocks)
-    unoptimized: process.env.NODE_ENV === 'development',
+    // Bypass Next.js image optimization - serve images directly from Payload
+    // This avoids AVIF decoding issues and connection problems during SSR
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'http',
@@ -12,12 +13,12 @@ const nextConfig: NextConfig = {
         port: '3001',
         pathname: '/**',
       },
-      // Add your production Payload URL here when deploying
-      // {
-      //   protocol: 'https',
-      //   hostname: 'your-payload-domain.com',
-      //   pathname: '/**',
-      // },
+      {
+        protocol: 'http',
+        hostname: '46.62.135.233',
+        port: '30081',
+        pathname: '/**',
+      },
     ],
   },
 };
