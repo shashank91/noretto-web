@@ -1,0 +1,26 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Noretto N logo">
+  <defs>
+    <linearGradient id="norettoGrad" x1="56" y1="56" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2C6BFF"/>
+      <stop offset="1" stop-color="#FFB000"/>
+    </linearGradient>
+
+    <!-- Subtle glow for dark backgrounds -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#2C6BFF" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FFB000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <!-- Arc accent (optional brand flourish) -->
+  <path d="M56 104 A92 92 0 0 1 200 104"
+        stroke="url(#norettoGrad)" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- Minimal N monogram -->
+  <path d="M72 200 L72 64 L184 200 L184 64"
+        stroke="url(#norettoGrad)" stroke-width="28"
+        stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#softGlow)"/>
+</svg>

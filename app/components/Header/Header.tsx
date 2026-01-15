@@ -26,7 +26,9 @@ export function Header() {
   }, [pathname]);
 
   const navLinks = [
+    { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -35,9 +37,9 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="noretto"
-            width={150}
+            width={60}
             height={60}
             className={styles.logoIcon}
             priority

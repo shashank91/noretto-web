@@ -48,8 +48,8 @@
 }
 
 .logoIcon {
-  width: auto;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
 }
 
@@ -59,7 +59,7 @@
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--tracking-tight);
   color: var(--text-primary);
-  margin-left: -30px; /* Pull text closer to logo (compensate for PNG whitespace) */
+  margin-left: -8px; /* Slight overlap with logo */
 }
 
 /* ═══════════════════════════════════════════
