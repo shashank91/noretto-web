@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { getPostBySlug, getAllPostSlugs, getMediaUrl, extractExcerpt } from '@/lib/payload';
 import { RichText } from '@/app/components/RichText/RichText';
 import { ReadingProgress } from '@/app/components/ReadingProgress/ReadingProgress';
-import { StickyHeader } from '@/app/components/StickyHeader/StickyHeader';
 import { ShareButton } from '@/app/components/ShareButton/ShareButton';
 import styles from './post.module.css';
 
@@ -99,17 +98,15 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className={styles.gridOverlay} />
       </div>
 
-      {/* Sticky Header */}
-      <StickyHeader>
-        <Link href="/blog" className={styles.backLink}>
-          <span className={styles.backArrow}>←</span>
-          <span>Back to Blog</span>
-        </Link>
-        <ShareButton />
-      </StickyHeader>
-
       {/* Article */}
       <article className={styles.article}>
+        {/* Breadcrumb navigation */}
+        <nav className={styles.breadcrumb}>
+          <Link href="/blog" className={styles.breadcrumbLink}>
+            ← Back to Blog
+          </Link>
+          <ShareButton />
+        </nav>
         {/* Hero Image */}
         {heroUrl && (
           <div className={styles.heroWrapper}>

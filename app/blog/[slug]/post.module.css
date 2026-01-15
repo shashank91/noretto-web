@@ -68,33 +68,15 @@
   pointer-events: none;
 }
 
-/* Sticky Header */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  padding: var(--space-4) var(--space-8);
-  background: rgba(12, 12, 12, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-normal), background var(--transition-normal);
-}
-
-.headerScrolled {
-  border-bottom-color: var(--border-subtle);
-  background: rgba(12, 12, 12, 0.95);
-}
-
-.headerInner {
+/* Breadcrumb Navigation */
+.breadcrumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 900px;
-  margin: 0 auto;
+  margin-bottom: var(--space-8);
 }
 
-.backLink {
+.breadcrumbLink {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -104,50 +86,8 @@
   transition: color var(--transition-fast);
 }
 
-.backLink:hover {
-  color: var(--text-primary);
-}
-
-.backArrow {
-  font-size: var(--font-size-md);
-  transition: transform var(--transition-fast);
-}
-
-.backLink:hover .backArrow {
-  transform: translateX(-4px);
-}
-
-/* Share Actions */
-.shareActions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.shareButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  background: transparent;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.shareButton:hover {
-  background: var(--bg-secondary);
-  border-color: var(--border-default);
-  color: var(--text-primary);
-}
-
-.shareButton.copied {
-  background: var(--status-success-subtle);
-  border-color: var(--status-success);
-  color: var(--status-success);
+.breadcrumbLink:hover {
+  color: var(--accent-default);
 }
 
 /* Article */
@@ -159,6 +99,7 @@
   margin: 0 auto;
   width: 100%;
   padding: var(--space-8);
+  padding-top: calc(80px + var(--space-8)); /* Account for fixed header */
 }
 
 /* Hero Image */

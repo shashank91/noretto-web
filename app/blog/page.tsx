@@ -39,14 +39,6 @@ export default async function BlogPage() {
         <div className={styles.gridOverlay} />
       </div>
 
-      {/* Header */}
-      <header className={styles.header}>
-        <Link href="/" className={styles.backLink}>
-          <span className={styles.backArrow}>←</span>
-          <span>noretto</span>
-        </Link>
-      </header>
-
       {/* Main content */}
       <main className={styles.main}>
         <div className={styles.titleSection}>

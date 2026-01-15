@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
+import { Header } from "./components/Header/Header";
 import "./globals.css";
 
 // Optimized font loading - self-hosted, no render blocking
@@ -48,7 +49,10 @@ export default function RootLayout({
         <link rel="preconnect" href={payloadOrigin} />
         <link rel="dns-prefetch" href={payloadOrigin} />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
