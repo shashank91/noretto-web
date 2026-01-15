@@ -4,6 +4,7 @@ const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:300
 
 /**
  * Fetch all published posts from Payload CMS
+ * Optimized: Only fetches fields needed for blog listing
  */
 export async function getPosts(options?: {
   limit?: number;
@@ -17,6 +18,13 @@ export async function getPosts(options?: {
     limit: String(limit),
     page: String(page),
     depth: '1', // Populate relationships one level deep
+    // Only select fields needed for blog listing cards
+    'select[id]': 'true',
+    'select[title]': 'true',
+    'select[slug]': 'true',
+    'select[heroImage]': 'true',
+    'select[content]': 'true', // Needed for excerpt extraction
+    'select[publishedAt]': 'true',
   });
 
   const res = await fetch(`${PAYLOAD_URL}/api/posts?${params}`, {
@@ -54,12 +62,15 @@ export async function getPostBySlug(slug: string): Promise<PayloadPost | null> {
 
 /**
  * Fetch all post slugs for static generation
+ * Optimized: Only fetches slug field
  */
 export async function getAllPostSlugs(): Promise<string[]> {
   const params = new URLSearchParams({
     'where[_status][equals]': 'published',
     limit: '100',
     depth: '0',
+    // Only select slug - minimal payload
+    'select[slug]': 'true',
   });
 
   const res = await fetch(`${PAYLOAD_URL}/api/posts?${params}`, {
